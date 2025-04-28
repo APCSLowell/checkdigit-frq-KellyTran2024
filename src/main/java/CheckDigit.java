@@ -9,9 +9,9 @@ public class CheckDigit
    {  
     int sum = 0;
     int numDigits = getNumberOfDigits(num);
-    for (int i = 0; i<numDigits; i++) {
+ for (int i = 1; i <= numDigits; i++) { 
         int digit = getDigit(num, i);
-        sum += digit * (7-i);
+        sum += digit * (7 - i + 1);
     }
     return sum % 10; 
    }
@@ -26,7 +26,7 @@ public class CheckDigit
    {      
     int numDigits = getNumberOfDigits(numWithCheckDigit);
     int originalNum = numWithCheckDigit/10; 
-    int givenCheckDigit = getDigit(numWithCheckDigit, numDigits-1);
+int givenCheckDigit = getDigit(numWithCheckDigit, numDigits); 
     return getCheck(originalNum) == givenCheckDigit;   
    }    
    
